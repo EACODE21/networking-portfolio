@@ -47,6 +47,23 @@ interface gigabitEthernet0/0/0
 - Ping PC-A → PC-B bloqueado después de aplicar la ACL.
 - `show access-lists`: contador de coincidencias en la regla deny.
 
+### Evidencia
+
+**Vecindad OSPF en estado FULL**
+![Vecindad OSPF](./01-ospf-neighbor.png)
+
+**Ruta aprendida por OSPF**
+![Tabla de rutas](./02-ip-route-ospf.png)
+
+**Ping antes de la ACL (TTL=126)**
+![Ping antes de la ACL](./03-ping-before-acl.png)
+
+**Ping bloqueado por la ACL**
+![Ping bloqueado](./04-ping-blocked.png)
+
+**Contador de coincidencias de la ACL**
+![show access-lists](./05-show-access-lists.png)
+
 ## Problemas encontrados y aprendizajes
 - **Primer ping con timeout:** el primer paquete se pierde por el proceso ARP
   (resolución de la MAC del gateway). Los siguientes responden normal.
